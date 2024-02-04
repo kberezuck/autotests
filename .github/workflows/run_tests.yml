@@ -93,13 +93,13 @@ jobs:
         uses: actions/download-artifact@v3
       - name: Get env data
         env:
-          HOST = ${{ secrets.HOST }}
-          email_2fa = ${{ secrets.email_2fa }}
-          password_2fa = ${{ secrets.password_2fa }}
-          email_no_2fa = ${{ secrets.email_no_2fa }}
-          password_no_2fa = ${{ secrets.password_no_2fa }}
-          email1 = ${{ secrets.email1 }}
-          email2 = $ {{ secrets.email2 }}
+          HOST : ${{ secrets.HOST }}
+          email_2fa : ${{ secrets.EMAIL_2FA }}
+          password_2fa : ${{ secrets.PASSWORD_2FA }}
+          email_no_2fa : ${{ secrets.email_no_2fa }}
+          password_no_2fa : ${{ secrets.password_no_2fa }}
+          email1 : ${{ secrets.email1 }}
+          email2 : $ {{ secrets.email2 }}
       - name: authorisation_test
         if: "github.event.inputs.deployment_target == 'authorisation_test'"
         run: pytest -m authorisation --alluredir allure-results
